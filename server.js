@@ -1,6 +1,6 @@
 var express = require('express');
 	app = express(),
-	server = app.listen(3000,listening),
+	server = app.listen(process.env.port || 3000,listening),
 	fs = require('file-system'),
 	d = fs.readFileSync('data.json'),
 	users = JSON.parse(d);
