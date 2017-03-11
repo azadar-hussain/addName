@@ -2,7 +2,7 @@ var express = require('express');
 	app = express(),
 	server = app.listen(3000,listening),
 	fs = require('file-system'),
-	d = fs.readFileSync('./src/data.json'),
+	d = fs.readFileSync('data.json'),
 	users = JSON.parse(d);
 
 
@@ -10,7 +10,7 @@ var express = require('express');
 //call back response of server listening on port 3000
 	function listening(){console.log("listening. . .");}
 //define the main root directory
-	app.use(express.static('./src'));
+	app.use(express.static('./'));
 //get all data from data.json
 app.get('/all',function(req, res){res.send(users);});
 //add users in the data.json
